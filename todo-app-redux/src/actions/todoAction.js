@@ -1,6 +1,6 @@
 import { ADD,
     DELETE,
-     UPDATE,
+     EDIT,
       COMPLETE
      } from "./types";
 
@@ -18,9 +18,16 @@ export function deleteTodo(id) {
   };
 }
 
-export function completeTodo(id) {
+export function completeTodo(id){
   return {
     type: COMPLETE,
     payload: id
+  };
+}
+
+export function editTodo(editTask,id){
+  return{
+    type:EDIT,
+    payload:{editTask,id}
   };
 }
